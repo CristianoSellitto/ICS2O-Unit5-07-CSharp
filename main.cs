@@ -10,30 +10,39 @@ class Program
     {
         int integer;
         int answer;
-        string text;
+        int counter = 1;
+        string text = "1";
 
         Console.WriteLine("Enter integer:");
         while (!int.TryParse(Console.ReadLine(), out integer))
         {
             Console.WriteLine("Error 2: This isn't an integer.");
             Environment.Exit(0);
+            answer = 0;
         }
         if (integer < 0)
         {
-            Console.WriteLine("Error 1: This integer is negative.")
+            Console.WriteLine("Error 1: This integer is negative.");
             Environment.Exit(0);
+            answer = 0;
+        }
+        else if (integer == 0)
+        {
+            answer = 0;
+            text = "nothing.";
         }
         else
         {
-            answer = 1
-            for (let count = 1; count < integer; count++) {
-                counter++
-                text = text + " + " + counter
-                answer = answer + counter
+            answer = 1;
+            for (int count = 1; count < integer; count++)
+            {
+                counter++;
+                text = text + " + " + counter;
+                answer = answer + counter;
             }
-            Console.WriteLine("\n" + answer);
-            Console.WriteLine("is the answer of ");
-            Console.WriteLine("\nFinished.");
         }
+        Console.WriteLine("\n" + answer);
+        Console.WriteLine("is the answer of " + text);
+        Console.WriteLine("\nFinished.");
     }
 }
